@@ -5,13 +5,8 @@ canvas.addEventListener('touchstart', (e) => {
   // Track the first finger touch point
   const touch = e.touches[0];
   const rect = canvas.getBoundingClientRect();
-  const touchX =
-    (touch.clientX - rect.left) *
-    (canvas.width / rect.width);
-
-const touchY =
-    (touch.clientY - rect.top) *
-    (canvas.height / rect.height);
+  const touchX = touch.clientX - rect.left;
+  const touchY = touch.clientY - rect.top;
 
   // 1. Reverse the screen center translation matrix
   let dx = touchX - canvas.width / 2;
